@@ -41,6 +41,7 @@ Users should be able to:
 -   CSS custom properties
 -   Flex-box
 -   Mobile-first workflow
+-   Modern Javascript
 
 ### What I learned
 
@@ -53,4 +54,4 @@ I will try to use more flex-box, less media queries and follow CSS best practice
 ## Author
 
 -   Frontend Mentor - [@Sandip2k](https://www.frontendmentor.io/profile/Sandip2k)
--   GitHub - [@Sandip2k](https://www.twitter.com/yourusername)
+-   GitHub - [@Sandip2k](https://github.com/Sandip2k)
