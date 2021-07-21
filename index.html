@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+
+        <script
+            src="https://kit.fontawesome.com/32bbe7b7c6.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="./index.js" defer></script>
+
+        <title>Frontend Mentor | Tip calculator app</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="splitterHeading">SPLI<br />TTER</header>
+            <div class="card">
+                <div class="billMenu">
+                    <div class="billAmount">
+                        <label for="billAmountValue">Bill</label>
+                        <div id="divWrapper">
+                            <div id="billAmountDiv">
+                                <input
+                                    id="billAmountValue"
+                                    type="number"
+                                    placeholder="0"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tipPercent">
+                        <div>Select Tip %</div>
+                        <div class="tipPercentChoices">
+                            <button class="percentChoiceSelections">5%</button>
+                            <button class="percentChoiceSelections">10%</button>
+                            <button class="percentChoiceSelections">15%</button>
+                            <button class="percentChoiceSelections">25%</button>
+                            <button class="percentChoiceSelections">50%</button>
+                            <div class="percentChoiceCustom">
+                                <input
+                                    type="number"
+                                    id="percentChoiceCustomInput"
+                                    placeholder="Custom"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="noOfPeople">
+                        <label
+                            for="noOfPeopleValue"
+                            style="
+                                display: flex;
+                                justify-content: space-between;
+                            "
+                        >
+                            Number Of People
+                            <span
+                                style="color: orangered"
+                                id="zeroError"
+                                class="hide"
+                                >Can't be zero</span
+                            >
+                        </label>
+                        <div id="divPeopleWrapper">
+                            <div id="noOfPeopleDiv">
+                                <input
+                                    id="noOfPeopleValue"
+                                    type="number"
+                                    placeholder="0"
+                                    value="0"
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tipResult">
+                    <div class="tipResultItem">
+                        <div class="amountHead">
+                            Tip Amount <br />
+                            <span class="perPerson">/ person</span>
+                        </div>
+                        <div class="amountRes">
+                            $ <span id="tipAmountVal">0.00</span>
+                        </div>
+                    </div>
+                    <div class="tipResultItem">
+                        <div class="amountHead">
+                            Total <br />
+                            <span class="perPerson">/ person</span>
+                        </div>
+                        <div class="amountRes">
+                            $ <span id="totalVal">0.00</span>
+                        </div>
+                    </div>
+                    <button id="reset">RESET</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

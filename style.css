@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(185, 41%, 84%);
+    font-family: "Space Mono", monospace;
+    margin: auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 670px) {
+    body {
+        background: hsl(185, 41%, 84%);
+        font-family: "Space Mono", monospace;
+        margin: auto;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem !important;
+        justify-content: space-between !important;
+        align-items: center;
+    }
+
+    .splitterHeading {
+        color: hsl(183, 100%, 15%);
+        letter-spacing: 5px;
+        font-weight: bold;
+        margin-top: 2rem !important;
+    }
+
+    .card {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        background-color: hsl(0, 0%, 100%);
+        padding: 2rem;
+        padding-bottom: 4rem !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        box-shadow: 0 3px 50px 1px hsl(185, 64%, 78%);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tipPercentChoices {
+        display: flex;
+        max-width: 15rem !important;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.5rem;
+    }
+
+    .percentChoiceSelections {
+        background: hsl(183, 100%, 15%);
+        min-width: 7rem !important;
+        color: hsl(189, 41%, 97%);
+        font-family: "Space Mono";
+        font-size: 18px;
+        font-weight: bold;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        border-radius: 0.2rem;
+        text-align: center;
+        border: none;
+    }
+
+    #percentChoiceCustomInput {
+        width: 7rem !important;
+        padding: 0.52rem;
+        height: 2.2rem;
+        border-radius: 0.2rem;
+    }
+
+    .tipResult {
+        background: hsl(183, 100%, 15%);
+        color: hsl(172, 67%, 45%);
+        border-radius: 0.6rem;
+        padding: 1.5rem !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem !important;
+    }
+
+    .amountHead {
+        color: hsl(189, 41%, 97%);
+        font-weight: bold;
+        font-size: 10px !important;
+    }
+
+    .perPerson {
+        color: hsl(184, 14%, 56%);
+        font-weight: bold;
+        font-size: 9px !important;
+    }
+
+    .amountRes {
+        font-size: 24px !important;
+        font-weight: bold;
+    }
+
+    .tipResultItem {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5rem !important;
+        align-items: center !important;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+
+.splitterHeading {
+    color: hsl(183, 100%, 15%);
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-top: 6rem;
+}
+
+.card {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    background-color: hsl(0, 0%, 100%);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 50px 1px hsl(185, 64%, 78%);
+    align-items: center;
+    justify-content: center;
+}
+
+.billMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.billAmount {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    color: hsl(186, 14%, 43%);
+    gap: 0.2rem;
+}
+
+input[type="number"] {
+    height: 2rem;
+    border: none;
+    background: hsl(189, 41%, 97%);
+    font-size: 15px;
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
+    font-weight: bolder;
+    text-align: right;
+}
+
+input[type="number"]::placeholder {
+    color: hsl(184, 14%, 56%);
+    text-align: right;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+#divWrapper {
+    border-radius: 0.2rem;
+}
+
+#divWrapper:hover {
+    box-shadow: 0 0 0 1px turquoise;
+}
+
+.divWrapperError {
+    box-shadow: 0 0 0 1px orangered;
+}
+
+.divWrapperError:hover {
+    box-shadow: 0 0 0 1px orangered;
+}
+
+#billAmountDiv {
+    height: 2rem;
+    border: none;
+    background: hsl(189, 41%, 97%);
+    border-radius: 0.2rem;
+    font-size: 15px;
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
+    font-weight: bolder;
+}
+
+#billAmountValue {
+    width: 12rem;
+}
+
+#billAmountDiv::before {
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    content: "$";
+    font-size: 18px;
+    font-weight: lighter;
+    background: hsl(189, 41%, 97%);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: hsl(184, 14%, 56%);
+}
+
+#billAmountDiv::after {
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    content: "";
+    font-size: 18px;
+    background: hsl(189, 41%, 97%);
+    padding-right: 1rem;
+    color: hsl(184, 14%, 56%);
+}
+
+.tipPercent {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    color: hsl(186, 14%, 43%);
+    gap: 0.5rem;
+}
+
+.tipPercentChoices {
+    display: flex;
+    max-width: 15.75rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.5rem;
+}
+
+.percentChoiceSelections {
+    background: hsl(183, 100%, 15%);
+    min-width: 4.75rem;
+    color: hsl(189, 41%, 97%);
+    font-family: "Space Mono";
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    border: none;
+}
+
+.percentChoiceSelections:hover {
+    background: hsl(172, 67%, 45%);
+}
+
+.noOfPeople {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    color: hsl(186, 14%, 43%);
+    gap: 0.2rem;
+}
+
+#noOfPeopleDiv {
+    height: 2rem;
+    border: none;
+    background: hsl(189, 41%, 97%);
+    border-radius: 0.2rem;
+    font-size: 15px;
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
+    font-weight: bolder;
+}
+
+#noOfPeopleValue {
+    width: 12rem;
+}
+
+#noOfPeopleDiv::before {
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    font-family: "Font Awesome 5 Free";
+    content: "\f007";
+    font-size: 12px;
+    background: hsl(189, 41%, 97%);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: hsl(184, 14%, 56%);
+}
+
+#noOfPeople::after {
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    content: "";
+    font-size: 18px;
+    background: hsl(189, 41%, 97%);
+    padding-right: 1rem;
+    color: hsl(184, 14%, 56%);
+}
+
+#percentChoiceCustomInput {
+    width: 4.75rem;
+    padding: 0.52rem;
+    height: 2.2rem;
+    border-radius: 0.2rem;
+}
+
+#percentChoiceCustomInput::placeholder {
+    text-align: center;
+    color: hsl(186, 14%, 43%);
+}
+
+#percentChoiceCustomInput {
+    border-radius: 0.2rem;
+}
+
+#percentChoiceCustomInput:hover {
+    box-shadow: 0 0 0 1px turquoise;
+}
+
+.tipResult {
+    background: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
+    border-radius: 0.6rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.tipResultItem {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+#divPeopleWrapper {
+    border-radius: 0.2rem;
+}
+
+#divPeopleWrapper:hover {
+    box-shadow: 0 0 0 1px turquoise;
+}
+
+.hide {
+    display: none;
+}
+
+#reset {
+    background: hsl(172, 67%, 45%);
+    font-family: "Space Mono";
+    width: auto;
+    font-size: 16px;
+    font-weight: bolder;
+    border: none;
+    color: hsl(183, 100%, 15%);
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    margin-top: 3rem;
+}
+
+.disabledButton {
+    background-color: hsl(183, 100%, 22%) !important;
+    color: hsl(183, 98%, 19%);
+}
+
+.amountHead {
+    color: hsl(189, 41%, 97%);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.perPerson {
+    color: hsl(184, 14%, 56%);
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.amountRes {
+    font-size: 32px;
+    font-weight: bold;
+}
